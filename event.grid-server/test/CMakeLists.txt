@@ -1,10 +1,10 @@
 project(event.grid-server.test)
 
-set(INCLUDE_PATH_DAEMON ${CMAKE_CURRENT_SOURCE_DIR}/include/event.grid/)
-set(SOURCE_PATH_DAEMON ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/include/event.grid/)
+set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 set(SOURCE_FILES
-	${SOURCE_PATH_DAEMON}/main.cpp
+	${SOURCE_PATH}/Main.cpp
 )
 
 add_executable (${PROJECT_NAME} ${SOURCE_FILES})
