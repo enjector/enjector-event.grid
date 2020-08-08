@@ -1,4 +1,4 @@
-project(event.grid-client.cpp.benchmark)
+project(event.grid-client.cpp.benchmark CXX)
 
 set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)

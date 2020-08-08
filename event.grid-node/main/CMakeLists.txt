@@ -1,4 +1,4 @@
-project(event.grid-node)
+project(event.grid-node CXX)
 
 set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)

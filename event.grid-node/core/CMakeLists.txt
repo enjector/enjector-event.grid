@@ -1,11 +1,11 @@
-project(event.grid-node.core)
+project(event.grid-node.core CXX)
 
-set(INCLUDE_PATH_CORE ${CMAKE_CURRENT_SOURCE_DIR}/include/event.grid/node)
-set(SOURCE_PATH_CORE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/include/event.grid/node)
+set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 set(SOURCE_FILES
-    ${INCLUDE_PATH_CORE}/Node.h
-    ${SOURCE_PATH_CORE}/Node.cpp
+    ${INCLUDE_PATH}/Node.h
+    ${SOURCE_PATH}/Node.cpp
 )
 
 add_library(${PROJECT_NAME} ${SOURCE_FILES})

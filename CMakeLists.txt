@@ -1,6 +1,6 @@
 project(event.grid)
 
-cmake_minimum_required (VERSION 3.5.1)
+cmake_minimum_required (VERSION 3.15.1)
 
 set(TMPDIR "${CMAKE_BINARY_DIR}/tmp")
 
@@ -13,6 +13,9 @@ if(NOT ARCHITECTURE)
   set(ARCHITECTURE "x64")
 endif()
 
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "Architecture: ${ARCHITECTURE}")
+
 # Defaults
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/lib)
@@ -20,12 +23,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 set(CMAKE_SHARED_LIBRARY_PREFIX_C "")
 set(CMAKE_SHARED_LIBRARY_PREFIX_CXX "")
 #set(CMAKE_REQUIRED_DEFINITIONS "-std=c++14")
-
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-message(STATUS "Architecture: ${ARCHITECTURE}")
 
 if(WIN32)
   # Windows
@@ -93,4 +98,6 @@ add_subdirectory(deps/mbedtls-2.23.0 EXCLUDE_FROM_ALL)
 ###############################################################################
 add_subdirectory(event.grid-node)
 add_subdirectory(event.grid-client.cpp)
+add_subdirectory(event.grid-client.dotnet)
+add_subdirectory(event.grid-client.java)
 
