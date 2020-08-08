@@ -1,2 +1,2 @@
-# enjector-event.grid
+cmake .
 cmake --build .
