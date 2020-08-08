@@ -1,22 +1,21 @@
-#include <gtest/gtest.h>
 #include <EventGrid/Node.h>
+#include <gtest/gtest.h>
 
 namespace {
-    // Tests the Increment() method.
+// Tests the Increment() method.
 
-    TEST(Counter, Increment) {
+TEST(Counter, Increment) {
+  EXPECT_EQ(1, 1);
+}
+TEST(Counter, Node) {
+  EventGrid::Node node;
+}
 
-        EXPECT_EQ(1, 1);
-    }
-    TEST(Counter, Node) {
-        EventGrid::Node node;
-    }
-
-};
+};  // namespace
 
 int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    const auto result = RUN_ALL_TESTS();
+  ::testing::InitGoogleTest(&argc, argv);
+  const auto result = RUN_ALL_TESTS();
 
-    return result;
+  return result;
 }

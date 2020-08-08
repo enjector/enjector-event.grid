@@ -1,11 +1,31 @@
-# Prerequisites
-*.d
+# Run artefacts
+*.log
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# Visual Studio project artefacts
+ALL_BUILD.*
+*.filters
+*.sln
+*.vcxproj*
+*.user
+.vs/
+.idea/
+ChangeLog.d
+*.tcl
+
+# Build artefacts
+Debug/
+Release/
+*.pdb
+*.exp
+*.ilk
 *.obj
+*.pc
+*.tmp
+
+# CMake artefacts
+CMakeFiles/
+*.cmake
+CMakeCache.txt
 
 # Precompiled Headers
 *.gch
@@ -16,10 +36,6 @@
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
 # Compiled Static libraries
 *.lai
 *.la
@@ -28,8 +44,3 @@
 
 # Executables
 *.exe
-
-# Shared libraries
-*.dll
-*.do
-
