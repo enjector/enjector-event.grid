@@ -1,0 +1,2 @@
+# enjector-event.grid
+cmake .
