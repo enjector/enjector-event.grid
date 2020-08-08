@@ -76,7 +76,11 @@ add_subdirectory(deps/spdlog-1.7.0 EXCLUDE_FROM_ALL)
 
 # build libevent
 set(EVENT__DISABLE_OPENSSL TRUE CACHE BOOL "")
+set(EVENT__DISABLE_REGRESS TRUE CACHE BOOL "")
+set(EVENT__LIBRARY_TYPE "STATIC" CACHE)
 add_subdirectory(deps/libevent-2.1.12 EXCLUDE_FROM_ALL)
+
+# build mbedtls
 add_subdirectory(deps/mbedtls-2.23.0 EXCLUDE_FROM_ALL)
 
 ###############################################################################
