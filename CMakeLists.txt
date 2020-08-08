@@ -9,6 +9,10 @@ if(NOT CMAKE_BUILD_TYPE)
 #  set(CMAKE_BUILD_TYPE $ENV{BUILD_TYPE})
 endif()
 
+if(NOT ARCHITECTURE)
+  set(ARCHITECTURE "x64")
+endif()
+
 # Defaults
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/lib)
@@ -21,7 +25,7 @@ set(CMAKE_SHARED_LIBRARY_PREFIX_CXX "")
 #set(CMAKE_REQUIRED_DEFINITIONS "-std=c++14")
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-
+message(STATUS "Architecture: ${ARCHITECTURE}")
 
 if(WIN32)
   # Windows
@@ -29,11 +33,12 @@ if(WIN32)
   if(CMAKE_BUILD_TYPE MATCHES "Debug")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd /bigobj /Zi /EHsc")
     set(CMAKE_CXX_FLAGS_PLATFORM_SPECIFIC "-D_WIN32 -D_DEBUG")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /DEBUG")
-    SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /DEBUG")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /DEBUG /MACHINE:X64")
+#    SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /DEBUG")
   else()
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MD /bigobj /EHsc")
     set(CMAKE_CXX_FLAGS_PLATFORM_SPECIFIC "-D_WIN32 -D_M_IX86")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /MACHINE:X64")
   endif()
 else()
   # Other - Linux
@@ -86,4 +91,6 @@ add_subdirectory(deps/mbedtls-2.23.0 EXCLUDE_FROM_ALL)
 ###############################################################################
 # Event Grid
 ###############################################################################
-add_subdirectory(event.grid-server)
+add_subdirectory(event.grid-node)
+add_subdirectory(event.grid-client.cpp)
+

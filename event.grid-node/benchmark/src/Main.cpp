@@ -1,6 +1,6 @@
 #include <benchmark/benchmark.h>
 
-#include <EventGrid/Node.h>
+#include <event.grid/node/Node.h>
 
 static void BM_StringCreation(benchmark::State& state) {
   for (auto _ : state) std::string empty_string;

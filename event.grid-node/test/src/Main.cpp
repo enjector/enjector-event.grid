@@ -1,4 +1,4 @@
-#include <EventGrid/Node.h>
+#include <event.grid/node/Node.h>
 #include <gtest/gtest.h>
 
 namespace {

@@ -1,6 +1,6 @@
-project(event.grid-server.core)
+project(event.grid-node.core)
 
-set(INCLUDE_PATH_CORE ${CMAKE_CURRENT_SOURCE_DIR}/include/EventGrid)
+set(INCLUDE_PATH_CORE ${CMAKE_CURRENT_SOURCE_DIR}/include/event.grid/node)
 set(SOURCE_PATH_CORE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 set(SOURCE_FILES

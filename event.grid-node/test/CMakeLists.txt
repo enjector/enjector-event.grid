@@ -1,6 +1,6 @@
-project(event.grid-server)
+project(event.grid-node.test)
 
-set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/include/event.grid/)
+set(INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 set(SOURCE_FILES
@@ -9,7 +9,9 @@ set(SOURCE_FILES
 
 add_executable (${PROJECT_NAME} ${SOURCE_FILES})
 
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS}")
+
 target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries (${PROJECT_NAME} LINK_PUBLIC event.grid-server.core)
+target_link_libraries (${PROJECT_NAME} LINK_PUBLIC gtest gmock event.grid-node.core)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

@@ -1,7 +1,7 @@
 #include <spdlog/sinks/basic_file_sink.h>
 #include <spdlog/spdlog.h>
 
-#include <EventGrid/Node.h>
+#include <event.grid/node/Node.h>
 
 int main() {
   spdlog::info("Welcome to spdlog!");
@@ -27,6 +27,6 @@ int main() {
   EventGrid::Node node;
 
   // Set the default logger to file logger
-  auto file_logger = spdlog::basic_logger_mt("basic_logger", "../log/enjector-event.grid.log");
+  auto file_logger = spdlog::basic_logger_mt("basic_logger", "../log/event.grid-node.log");
   spdlog::set_default_logger(file_logger);
 }
