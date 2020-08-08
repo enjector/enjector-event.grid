@@ -1,5 +1,9 @@
 # Enjector Event Grid
-Enjector Event Grid is a event based computing fabric. A solution built using the Event Grid is made up on autonomous components that communicate with each other using asynchronous message passing.
+Enjector Event Grid is a event based computing fabric. The Event Grid allows you to build complex distributed systems where the flow of the system is determined by events such as applications made a change to some state, a new sensor reading was published or user interacting with a web page.
+
+
+
+A solution built using the Event Grid is made up on autonomous components that communicate with each other using asynchronous message passing.
 
 Here are some principles:
 
