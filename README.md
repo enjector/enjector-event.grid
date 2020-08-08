@@ -1,9 +1,9 @@
 # Enjector Event Grid
-Enjector Event Grid (Event Grid) is a peer to peer computing fabric. The Event Grid is made up on autonomous components that communicate with each other using asynchronous messages.
+Enjector Event Grid is a event based computing fabric. A solution built using the Event Grid is made up on autonomous components that communicate with each other using asynchronous message passing.
 
-Here are some highlights:
+Here are some principles:
 
-* Event Grid allows distributed components to run on any host and to be written in any language. The key design is that components, which we call Event Grid Processes, should interact with each other asynchronously and the should aim to reduce the communication latency dynamically.
+* The Grid allows distributed components to run on any type of host (cloud, on-premise, mobile, embedded). Components can be many languages (C, C++, Java, Python). The key design is that components, which we call Event Grid Processes, should interact with each other asynchronously and the should aim to reduce the communication latency dynamically.
 
 * The goal of the Event Grid's architecture is to ensure that software platform can achieve a greater magnitude in computing throughput than traditional architectures like "N-Tier" by taking advantage of growing number multi-core CPUs, GPUs and FPGAs within servers and specialised sensors on edge devices.
 
