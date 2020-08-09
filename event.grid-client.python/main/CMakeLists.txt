@@ -1,8 +1,4 @@
 project(event.grid-client.python)
 
-find_package(PythonInterp 3.5 REQUIRED)
-
-set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src)
-
-set(SOURCE_FILES
-)
+add_subdirectory(deps/pybind11-2.5.0)
+pybind11_add_module(eventgrid src/Main.cpp)

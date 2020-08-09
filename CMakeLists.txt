@@ -9,10 +9,6 @@ if(NOT CMAKE_BUILD_TYPE)
 #  set(CMAKE_BUILD_TYPE $ENV{BUILD_TYPE})
 endif()
 
-if(NOT ARCHITECTURE)
-  set(ARCHITECTURE "x64")
-endif()
-
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Architecture: ${ARCHITECTURE}")
 
@@ -100,7 +96,7 @@ add_subdirectory(event.grid-node)
 add_subdirectory(event.grid-client.cpp)
 add_subdirectory(event.grid-client.c)
 add_subdirectory(event.grid-client.java)
-add_subdirectory(event.grid-client.python)
+#add_subdirectory(event.grid-client.python)
 
 if(WIN32)
     add_subdirectory(event.grid-client.dotnet)
