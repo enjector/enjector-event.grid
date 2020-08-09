@@ -9,14 +9,16 @@ $ git clone https://github.com/enjector/enjector-event.grid.git
 $ cd enjector-event.grid
 $ mkdir build 
 $ cd build
-$ cmake ../
-$ cmake --build ../
+$ cmake -A x64 ../
+$ cmake -A x64 --build ../
+
+Python package
+$ pip install ./event.grid-client.python
+
 ```
 ## Platforms
  * Linux (Ubuntu)
  * Windows
-
-
 
 ## Usage samples
 
@@ -33,4 +35,10 @@ int main()
 #### C# Basic Publisher
 ```c#
 ```
+---
+#### Python Basic Publisher
+```python
+import eventgrid as evg
+```
+
 
