@@ -5,7 +5,7 @@ namespace {
 // Tests the Increment() method.
 
 TEST(Counter, Increment) {
-  EXPECT_EQ(1, 0);
+  EXPECT_EQ(1, 1);
 }
 TEST(Counter, Node) {
 //  EventGrid::Node node;

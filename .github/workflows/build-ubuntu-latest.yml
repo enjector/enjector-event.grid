@@ -30,12 +30,25 @@ jobs:
     - name: Building
       run: make -j
 
-    # Test
-    - name: Testing
+      # Test Node
+    - name: Testing Event.Grid Node
       shell: cmake -P {0}
       run: |
         execute_process(
           COMMAND ./event.grid-node.test
+          WORKING_DIRECTORY bin
+          RESULT_VARIABLE result
+        )
+        if (NOT result EQUAL 0)
+          message(FATAL_ERROR "event.grid-node.test tests failed!")
+        endif()
+
+    # Test Client C++
+    - name: Testing Event.Grid C++ Client
+      shell: cmake -P {0}
+      run: |
+        execute_process(
+          COMMAND ./event.grid-client.cpp.test
           WORKING_DIRECTORY bin
           RESULT_VARIABLE result
         )

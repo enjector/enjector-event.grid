@@ -4,11 +4,11 @@
 namespace {
 // Tests the Increment() method.
 
-TEST(Counter, Increment) {
+TEST(Counter, IncrementA) {
   EXPECT_EQ(1, 1);
 }
 TEST(Counter, Node) {
-  EventGrid::Client::NodeClient node;
+//  EventGrid::Client::NodeClient node;
 }
 
 };  // namespace
