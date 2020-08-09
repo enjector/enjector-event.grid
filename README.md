@@ -16,7 +16,7 @@ $ cmake -A x64 ../
 $ cmake -A x64 --build ../
 
 Python package
-$ pip install ./event.grid-client.python
+$ python event.grid-client.python/setup.py install
 
 ```
 ## Platforms

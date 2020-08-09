@@ -1,7 +1,7 @@
 #include <pybind11/pybind11.h>
-//#include <event.grid/client/NodeClient.h>
+#include <event.grid/client/NodeClient.h>
 
-// EventGrid::Client::NodeClient node;
+EventGrid::Client::NodeClient node;
 
 #include <string>
 
