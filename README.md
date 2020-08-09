@@ -1,3 +1,5 @@
+![CI](https://github.com/enjector/enjector-event.grid/workflows/CI/badge.svg)
+
 # Enjector Event.Grid
 Enjector Event.Grid is an event based computing fabric framework. The Event.Grid allows you to rapidly build complex distributed systems where the flow of the system is determined by events such as applications made a change to some state, a new sensor reading was published or user interacting with a web page.
 
