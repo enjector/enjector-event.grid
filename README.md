@@ -3,20 +3,41 @@ Enjector Event.Grid is an event based computing fabric framework. The Event.Grid
 
 An Event.Grid system is made up of services that are written in C, C++, .NET C#, Java and Python. All communication is done using asynchronous message passing.
 
+# Support
+* Join us on [Discord](https://discord.me/enjector-intermix) 
+
 ## Install
+Windows Build
+* Requires Visual Studio 2019 and CMake 3.18.x
+
 ```console
 $ git clone https://github.com/enjector/enjector-event.grid.git
 $ cd enjector-event.grid
 $ mkdir build 
 $ cd build
-$ cmake ../
-$ cmake --build ../
+$ cmake -A x64 .
+$ cmake -A x64 --build .
 ```
+
+Install Python package
+* Requires Python 3.8.x
+```console
+$ python event.grid-client.python/setup.py install
+```
+
+Ubuntu (NOT WORKING YET)
+```console
+sudo apt install -y python3-dev default-jdk
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install pybind11
+```
+
 ## Platforms
- * Linux (Ubuntu)
- * Windows
-
-
+ * Linux (Ubuntu) x64
+ * Windows x64
 
 ## Usage samples
 
@@ -33,4 +54,10 @@ int main()
 #### C# Basic Publisher
 ```c#
 ```
+---
+#### Python Basic Publisher
+```python
+import eventgrid as evg
+```
+
 
