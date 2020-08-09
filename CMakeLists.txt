@@ -89,6 +89,8 @@ add_subdirectory(deps/libevent-2.1.12 EXCLUDE_FROM_ALL)
 # build mbedtls
 add_subdirectory(deps/mbedtls-2.23.0 EXCLUDE_FROM_ALL)
 
+add_subdirectory(deps/pybind11-2.5.0)
+
 ###############################################################################
 # Event Grid
 ###############################################################################
@@ -96,7 +98,7 @@ add_subdirectory(event.grid-node)
 add_subdirectory(event.grid-client.cpp)
 add_subdirectory(event.grid-client.c)
 add_subdirectory(event.grid-client.java)
-add_subdirectory(event.grid-client.python)
+add_subdirectory(event.grid-client.python/main)
 
 if(WIN32)
     add_subdirectory(event.grid-client.dotnet)

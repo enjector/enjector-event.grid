@@ -1,4 +1,4 @@
-project(event.grid-client.python)
+project(event.grid-client.python-installer)
 cmake_minimum_required (VERSION 3.15.1)
 
 add_subdirectory(deps/pybind11-2.5.0)

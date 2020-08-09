@@ -60,6 +60,19 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
+#setup(
+#    name='eventgrid',
+#    version='0.0.1',
+#    author='Enjector Software',
+#    author_email='contact@enjector.com',
+#    description='Build project using pybind11 and CMake',
+#    long_description='',
+#    ext_modules=[CMakeExtension('eventgrid')],
+#    cmdclass=dict(build_ext=CMakeBuild),
+#    zip_safe=False,
+#)
+
+
 setup(
     name='eventgrid',
     version='0.0.1',
@@ -67,7 +80,8 @@ setup(
     author_email='contact@enjector.com',
     description='Build project using pybind11 and CMake',
     long_description='',
-    ext_modules=[CMakeExtension('eventgrid')],
-    cmdclass=dict(build_ext=CMakeBuild),
-    zip_safe=False,
-)
+    packages    = [ 'eventgrid' ],
+    package_data = {
+        '': ['event.grid-client.python.cp38-win_amd64.pyd']
+    }
+ )

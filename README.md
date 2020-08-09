@@ -3,6 +3,9 @@ Enjector Event.Grid is an event based computing fabric framework. The Event.Grid
 
 An Event.Grid system is made up of services that are written in C, C++, .NET C#, Java and Python. All communication is done using asynchronous message passing.
 
+# Support
+* Join us on [Discord](https://discord.me/enjector-intermix) 
+
 ## Install
 ```console
 $ git clone https://github.com/enjector/enjector-event.grid.git
