@@ -29,3 +29,16 @@ jobs:
     # Build
     - name: Building
       run: make -j
+
+    # Test
+    - name: Run tests
+      shell: cmake -P {0}
+      run: |
+        execute_process(
+          COMMAND ./event.grid-node.test
+          WORKING_DIRECTORY bin
+          RESULT_VARIABLE result
+        )
+        if (NOT result EQUAL 0)
+          message(FATAL_ERROR "event.grid-node.test tests failed!")
+        endif()
