@@ -53,10 +53,16 @@ else()
     set(CMAKE_LIBS_PLATFORM_SPECIFIC "-ldl -lm -lrt")
 #    set(CMAKE_LIBS_PLATFORM_SPECIFIC "-ldl -lm -lrt -static-libgcc -static-libstdc++")
   else()
-    set(CMAKE_CXX_FLAGS_PLATFORM_SPECIFIC "-D_LINUX -Wall -fPIC -fpic -O3 -Wl,-t")
+    set(CMAKE_CXX_FLAGS_PLATFORM_SPECIFIC "-D_LINUX -Wall -fPIC -fpic -O3")
     set(CMAKE_LIBS_PLATFORM_SPECIFIC "-ldl -lm -lrt")
 #    set(CMAKE_LIBS_PLATFORM_SPECIFIC "-ldl -lm -lrt -static-libgcc -static-libstdc++")
   endif()
+endif()
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} ${CMAKE_CXX_FLAGS_PLATFORM_SPECIFIC}")
+else()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} ${CMAKE_CXX_FLAGS_PLATFORM_SPECIFIC}")
 endif()
 
 ###############################################################################
