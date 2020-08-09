@@ -37,7 +37,11 @@ set(SOURCE_FILES
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_PYTHON_SHARED_LIB_NAME})
-set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".pyd")
+
+# Only for Windows
+if(WIN32)
+    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".pyd")
+endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -I./include")
 target_link_libraries(${PROJECT_NAME} LINK_PUBLIC pybind11 event.grid-client.cpp ${PYTHON_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_LIBS_PLATFORM_SPECIFIC})
