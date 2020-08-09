@@ -98,7 +98,9 @@ add_subdirectory(deps/mbedtls-2.23.0 EXCLUDE_FROM_ALL)
 ###############################################################################
 add_subdirectory(event.grid-node)
 add_subdirectory(event.grid-client.cpp)
+add_subdirectory(event.grid-client.c)
 add_subdirectory(event.grid-client.java)
+add_subdirectory(event.grid-client.python)
 
 if(WIN32)
     add_subdirectory(event.grid-client.dotnet)
