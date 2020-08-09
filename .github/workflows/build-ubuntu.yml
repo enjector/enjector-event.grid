@@ -43,7 +43,7 @@ jobs:
           message(FATAL_ERROR "event.grid-node.test tests failed!")
         endif()
 
-    # Test Client C++
+      # Test Client C++
     - name: Testing Event.Grid C++ Client
       shell: cmake -P {0}
       run: |
@@ -53,5 +53,18 @@ jobs:
           RESULT_VARIABLE result
         )
         if (NOT result EQUAL 0)
-          message(FATAL_ERROR "event.grid-node.test tests failed!")
+          message(FATAL_ERROR "event.grid-client.cpp.test tests failed!")
+        endif()
+
+    # Test Client C
+    - name: Testing Event.Grid C Client
+      shell: cmake -P {0}
+      run: |
+        execute_process(
+          COMMAND ./event.grid-client.c.test
+          WORKING_DIRECTORY bin
+          RESULT_VARIABLE result
+        )
+        if (NOT result EQUAL 0)
+          message(FATAL_ERROR "event.grid-client.c.test tests failed!")
         endif()
