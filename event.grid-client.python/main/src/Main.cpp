@@ -1,4 +1,7 @@
 #include <pybind11/pybind11.h>
+//#include <event.grid/client/NodeClient.h>
+
+// EventGrid::Client::NodeClient node;
 
 #include <string>
 
@@ -15,7 +18,7 @@ class Example {
   double _a;
 };
 
-PYBIND11_MODULE(example, m) {
+PYBIND11_MODULE(eventgrid, m) {
   m.doc() = "Python bindings for an example library";
 
   namespace py = pybind11;
@@ -26,9 +29,6 @@ PYBIND11_MODULE(example, m) {
 }
 
 //#include <pybind11/pybind11.h>
-//#include <event.grid/client/NodeClient.h>
-//
-//EventGrid::Client::NodeClient node;
 //
 //int add(int i, int j) {
 //    return i + j;
