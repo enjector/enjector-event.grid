@@ -1,6 +1,6 @@
 # Enjector Event.Grid
 
-[![CI](https://github.com/enjector/enjector-event.grid/workflows/CI%20Build%20Ubuntu/badge.svg)](https://github.com/enjector/enjector-event.grid/actions)
+[![CI](https://github.com/enjector/enjector-event.grid/workflows/Ubuntu%20Build/badge.svg)](https://github.com/enjector/enjector-event.grid/actions)
 
 Enjector Event.Grid is an event based computing fabric framework. The Event.Grid allows you to rapidly build complex distributed systems where the flow of the system is determined by events such as applications made a change to some state, a new sensor reading was published or user interacting with a web page.
 
