@@ -12,6 +12,6 @@ setup(
     '': 'event.grid-client.python/main/package'
   },
   package_data = {
-    '': ['eventgrid.pyd']
+    '': ['eventgrid.pyd'] if sys.platform.startswith("win") else ['eventgrid.so']
   }
 )

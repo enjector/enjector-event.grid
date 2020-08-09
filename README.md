@@ -31,6 +31,8 @@ $ make -j
 * Requires Python 3.8.x
 ```console
 $ python event.grid-client.python/setup.py install
+$ python event.grid-client.python/tests/check_if_installed.py
+
 ```
 
 ## Platforms
