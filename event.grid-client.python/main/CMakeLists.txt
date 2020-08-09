@@ -41,7 +41,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".pyd")
 
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -I./include")
 target_link_libraries(${PROJECT_NAME} LINK_PUBLIC pybind11 event.grid-client.cpp ${PYTHON_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_LIBS_PLATFORM_SPECIFIC})
-#target_link_libraries(${PROJECT_NAME} LINK_PUBLIC pybind11 event.grid-client.cpp ${PYTHON_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_LIBS_PLATFORM_SPECIFIC})
 
 # Place the initialization and set file in the output directory for the Python bindings
 configure_file(__init__.py

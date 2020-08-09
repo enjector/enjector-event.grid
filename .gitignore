@@ -24,7 +24,6 @@ Release/
 
 # CMake artefacts
 CMakeFiles/
-*.cmake
 CMakeCache.txt
 
 # Precompiled Headers
