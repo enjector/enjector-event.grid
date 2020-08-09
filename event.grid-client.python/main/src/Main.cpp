@@ -1,4 +1,7 @@
 #include <pybind11/pybind11.h>
+//#include <event.grid/client/NodeClient.h>
+
+//EventGrid::Client::NodeClient node;
 
 int add(int i, int j) {
     return i + j;
