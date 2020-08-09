@@ -31,7 +31,7 @@ jobs:
       run: make -j
 
     # Test
-    - name: Run tests
+    - name: Testing
       shell: cmake -P {0}
       run: |
         execute_process(

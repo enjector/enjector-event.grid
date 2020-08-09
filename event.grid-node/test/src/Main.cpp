@@ -8,7 +8,7 @@ TEST(Counter, Increment) {
   EXPECT_EQ(1, 1);
 }
 TEST(Counter, Node) {
-  EventGrid::Node node;
+//  EventGrid::Node node;
 }
 
 };  // namespace
