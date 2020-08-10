@@ -14,6 +14,4 @@ RUN make -j package
 FROM debian:stretch-slim
 COPY --from=builder /build/enjector-event.grid-0.0.1-Linux-event.grid-node.deb /
 RUN dpkg --install /enjector-event.grid-0.0.1-Linux-event.grid-node.deb
-CMD ["event.grid-node.test"]
-CMD ["event.grid-node.benchmark"]
 CMD ["event.grid-node"]
