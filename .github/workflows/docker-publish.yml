@@ -14,7 +14,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: enjector/event.grid
+  IMAGE_NAME: event-grid-node
 
 jobs:
   # Run tests.
