@@ -1,11 +1,12 @@
 project(event.grid)
 
-cmake_minimum_required (VERSION 3.15.1)
+cmake_minimum_required (VERSION 3.7.2)
+#cmake_minimum_required (VERSION 3.15.1)
 
 set(TMPDIR "${CMAKE_BINARY_DIR}/tmp")
 
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Debug")
+  set(CMAKE_BUILD_TYPE "Release")
 #  set(CMAKE_BUILD_TYPE $ENV{BUILD_TYPE})
 endif()
 
@@ -99,17 +100,33 @@ add_subdirectory(deps/libevent-2.1.12 EXCLUDE_FROM_ALL)
 # build mbedtls
 add_subdirectory(deps/mbedtls-2.23.0 EXCLUDE_FROM_ALL)
 
-add_subdirectory(deps/pybind11-2.5.0)
+if(NOT CMAKE_BUILD_FOR_DOCKER_IMAGE)
+    add_subdirectory(deps/pybind11-2.5.0)
+endif()
 
 ###############################################################################
 # Event Grid
 ###############################################################################
 add_subdirectory(event.grid-node)
-add_subdirectory(event.grid-client.cpp)
-add_subdirectory(event.grid-client.c)
-add_subdirectory(event.grid-client.java)
-add_subdirectory(event.grid-client.python/main)
 
-if(WIN32)
-    add_subdirectory(event.grid-client.dotnet)
+if(NOT CMAKE_BUILD_FOR_DOCKER_IMAGE)
+    add_subdirectory(event.grid-client.cpp)
+    add_subdirectory(event.grid-client.c)
+    add_subdirectory(event.grid-client.java)
+    add_subdirectory(event.grid-client.python/main)
+
+    if(WIN32)
+       add_subdirectory(event.grid-client.dotnet)
+    endif()
 endif()
+
+set(CPACK_PACKAGE_NAME "enjector-event.grid")
+set(CPACK_PACKAGE_VENDOR "Enjector Software Ltd.")
+set(CPACK_VERBATIM_VARIABLES true)
+set(CPACK_PACKAGE_VERSION_MAJOR 0)
+set(CPACK_PACKAGE_VERSION_MINOR 0)
+set(CPACK_PACKAGE_VERSION_PATCH 1)
+set(CPACK_GENERATOR DEB)
+set(CPACK_DEB_COMPONENT_INSTALL ON)
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Enjector Software <contact@enjector.com>")
+include(CPack)

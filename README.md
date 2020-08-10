@@ -35,7 +35,28 @@ $ make -j
 ```console
 $ python event.grid-client.python/setup.py install
 $ python event.grid-client.python/tests/check_if_installed.py
+```
 
+##### Docker image
+```console
+Build
+$ docker build -t enjector/event.grid:latest .
+
+Publish
+$ docker push enjector/event.grid
+
+Run
+$ docker run -p 127.0.0.1:8080:8080/tcp enjector/event.grid
+
+Shell To
+$ docker exec -it <container name/id> /bin/bash
+
+Clean (Windows)
+$ powershell
+$ > docker ps -q | % { docker stop $_ }
+$ > docker images -a -q | % { docker image rm $_ -f }
+$ > docker system prune --all -f
+$ > exit
 ```
 
 ## Platforms
