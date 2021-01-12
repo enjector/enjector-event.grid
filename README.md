@@ -16,7 +16,7 @@ An Event.Grid system is made up of services that are written in C, C++, .NET C#,
 ```console
 $ git clone https://github.com/enjector/enjector-event.grid.git
 $ cd enjector-event.grid
-$ cmake -A x64 .
+$ cmake -A x64 -DHAVE_STD_REGEX=1 -DHAVE_POSIX_REGEX=0 -DCMAKE_BUILD_TYPE=Release .
 $ cmake -A x64 --build .
 ```
 
